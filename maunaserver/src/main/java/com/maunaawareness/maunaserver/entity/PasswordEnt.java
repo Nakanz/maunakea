@@ -14,8 +14,8 @@ public class PasswordEnt {
 	@Column(name = "PASSWORD_ID")
 	private int passwordId;
 	
-	@Column(name = "USER_PW_ID")
-	private int userPwId;
+	@Column(name = "PASSWORD_USER_ID")
+	private int passwordUserId;
 	
 	@Column(name = "PASSWORD")
 	private String password;
@@ -23,7 +23,7 @@ public class PasswordEnt {
 	public PasswordEnt() {}
 	
 	public PasswordEnt(int userPwId, String password) {
-		this.userPwId = userPwId;
+		this.passwordUserId = userPwId;
 		this.password = password;
 	}
 
@@ -32,11 +32,11 @@ public class PasswordEnt {
 	}
 
 	public int getUserPwId() {
-		return userPwId;
+		return passwordUserId;
 	}
 
 	public void setUserPwId(int userPwId) {
-		this.userPwId = userPwId;
+		this.passwordUserId = userPwId;
 	}
 
 	public String getPassword() {

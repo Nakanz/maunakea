@@ -5,9 +5,11 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.maunaawareness.maunaserver.manager.UserManager;
+import com.maunaawareness.maunaserver.web.vo.LoginCredentials;
 import com.maunaawareness.maunaserver.web.vo.SignUpCredentials;
 
 @RestController
@@ -21,4 +23,11 @@ public class UserController {
 	public boolean signUp(@RequestBody SignUpCredentials credentials) {
 		return userManager.createUser(credentials);
 	}
+	
+	@RequestMapping(value = "/sign-in", produces = MediaType.APPLICATION_JSON_VALUE)
+	public boolean signIn(@RequestParam(value="username") String username, @RequestParam(value = "password") String password) {
+		return userManager.loginUser(new LoginCredentials(username, password));
+	}
+	
+	
 }

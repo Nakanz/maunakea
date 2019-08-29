@@ -7,6 +7,7 @@ import com.maunaawareness.maunaserver.entity.PasswordEnt;
 import com.maunaawareness.maunaserver.entity.UserEnt;
 import com.maunaawareness.maunaserver.repository.PasswordRepository;
 import com.maunaawareness.maunaserver.repository.UserRepository;
+import com.maunaawareness.maunaserver.web.vo.LoginCredentials;
 import com.maunaawareness.maunaserver.web.vo.SignUpCredentials;
 
 @Service
@@ -23,6 +24,19 @@ public class UserManager {
 			if (credentials.getPassword().contentEquals(credentials.getConfirmPassword())) {
 				passwordRepository.save(new PasswordEnt(user.getUserId(), credentials.getPassword()));
 				return true;
+			}
+		}
+		return false;
+	}
+	// should return boolean or a User object?
+	public boolean loginUser(LoginCredentials credentials) {
+		if (credentials != null) {
+			UserEnt user = userRepository.getUserEntByUsername(credentials.getUsername());
+			if (user != null) {
+				PasswordEnt passwordEnt = passwordRepository.getPasswordEntByPasswordUserId(user.getUserId());
+				if (passwordEnt.getPassword().contentEquals(credentials.getPassword())) {
+					return true;
+				}
 			}
 		}
 		return false;
