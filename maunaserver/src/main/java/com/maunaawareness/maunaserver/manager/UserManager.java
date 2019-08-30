@@ -9,6 +9,7 @@ import com.maunaawareness.maunaserver.repository.PasswordRepository;
 import com.maunaawareness.maunaserver.repository.UserRepository;
 import com.maunaawareness.maunaserver.web.vo.LoginCredentials;
 import com.maunaawareness.maunaserver.web.vo.SignUpCredentials;
+import com.maunaawareness.maunaserver.web.vo.User;
 
 @Service
 public class UserManager {
@@ -40,5 +41,9 @@ public class UserManager {
 			}
 		}
 		return false;
+	}
+	
+	public User getUser() {
+		return new User();
 	}
 }

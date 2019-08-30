@@ -53,6 +53,12 @@ module.exports = function (ctx) {
         'QBreadcrumbs',
         'QBreadcrumbsEl',
         'QScrollArea',
+        'QTabs',
+        'QTab',
+        'QRouteTab',
+        'QSeparator',
+        'QTabPanels',
+        'QTabPanel',
       ],
 
       directives: [

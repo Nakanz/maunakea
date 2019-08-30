@@ -61,8 +61,8 @@
             </q-item-section>
             <q-item-section>
               <q-item-label>Sign up</q-item-label>
-              <q-item-label caption>create an account to</q-item-label>
-              <q-item-label caption>receive email updates</q-item-label>
+              <q-item-label caption>Subscribe to email</q-item-label>
+              <q-item-label caption>updates!</q-item-label>
             </q-item-section>
           </q-item>
           <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
