@@ -1,10 +1,13 @@
 <template>
-      <div class="q-ma-lg row items-start q-gutter-md justify-center">
+      <div class="q-ma-lg row q-gutter-md justify-center">
         <q-card class="my-card">
           <q-card-section>
-            <div class="text-h5"><strong>The Importance of Mauna Kea</strong></div>
+            <div class="text-h5"
+                 align="center">
+              <strong>The Importance of Sacred Mauna Kea</strong>
+            </div>
           </q-card-section>
-          <img src="../statics/maunaAWakea.jpg">
+          <img src="../statics/kucampingMauna.jpg">
           <q-card-section>
             <ul id="importanceBullet">
               <li v-for="item in importance" :key="item.message">
@@ -40,12 +43,12 @@ export default {
     return {
       protectors: 'Something about the movement and peaceful protest',
       importance: [
-        { message: '' },
-        { message: '' },
-        { message: '' },
-        { message: '' },
-        { message: '' },
-        { message: '' },
+        { message: 'History' },
+        { message: 'Why it is sacred' },
+        { message: 'Its meaning to Hawaiian and polynesian people' },
+        { message: 'The reason for fighting' },
+        { message: 'Peaceful protest' },
+        { message: 'Aʻole TMT' },
       ],
     };
   },

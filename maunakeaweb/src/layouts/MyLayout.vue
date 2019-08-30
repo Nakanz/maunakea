@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh Lpr lff" class="shadow-2 rounded-borders">
+  <q-layout view="hHh Lpr lff">
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -9,11 +9,11 @@
           @click="drawer = !drawer"
           aria-label="Menu"
         >
-          <q-icon name="menu" />
+          <img src="../statics/icons/mountain-512.png" style="width: 30px">
         </q-btn>
 
         <q-toolbar-title>
-<!--          <img src="../statics/ku.jpg" style="width: 50px">-->
+<!--          <img src="../statics/icons/mountain-512.png" style="width: 30px">-->
           Mauna a Wākea
         </q-toolbar-title>
 
@@ -22,8 +22,9 @@
       <q-toolbar inset>
         <q-breadcrumbs active-color="white" style="font-size: 16px">
           <q-breadcrumbs-el label="Home" icon="home" to="/"/>
-          <q-breadcrumbs-el label="Components" icon="widgets" />
-          <q-breadcrumbs-el label="Toolbar" />
+          <q-breadcrumbs-el label="Movements" icon="group" to="/movements"/>
+          <q-breadcrumbs-el label="News" icon="waves" to="/news"/>
+          <q-breadcrumbs-el label="navigation"/>
         </q-breadcrumbs>
       </q-toolbar>
     </q-header>
@@ -44,7 +45,7 @@
     >
       <q-scroll-area class="fit">
         <q-list>
-          <q-item-label header>Essential Links</q-item-label>
+          <q-item-label header>Ways to Get Involved</q-item-label>
           <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
             <q-item-section avatar>
               <q-icon name="school" />
@@ -56,47 +57,48 @@
           </q-item>
           <q-item clickable tag="a" target="_blank" href="https://github.quasar.dev">
             <q-item-section avatar>
-              <q-icon name="code" />
+              <q-icon name="mail" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>Github</q-item-label>
-              <q-item-label caption>github.com/quasarframework</q-item-label>
+              <q-item-label>Sign up</q-item-label>
+              <q-item-label caption>create an account to</q-item-label>
+              <q-item-label caption>receive email updates</q-item-label>
             </q-item-section>
           </q-item>
           <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
             <q-item-section avatar>
-              <q-icon name="chat" />
+              <q-icon name="attach_money" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>Discord Chat Channel</q-item-label>
-              <q-item-label caption>chat.quasar.dev</q-item-label>
+              <q-item-label>Donate</q-item-label>
+              <q-item-label caption>not implemented</q-item-label>
             </q-item-section>
           </q-item>
-          <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
+          <q-item clickable tag="a" target="_blank" href="https://www.instagram.com/protectmaunakea/?hl=en">
             <q-item-section avatar>
               <q-icon name="record_voice_over" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>Forum</q-item-label>
-              <q-item-label caption>forum.quasar.dev</q-item-label>
+              <q-item-label>Instagram</q-item-label>
+              <q-item-label caption>@protectmaunakea</q-item-label>
             </q-item-section>
           </q-item>
-          <q-item clickable tag="a" target="_blank" href="https://twitter.quasar.dev">
+          <q-item clickable tag="a" target="_blank" href="https://twitter.com/protectmaunakea?lang=en">
             <q-item-section avatar>
               <q-icon name="rss_feed" />
             </q-item-section>
             <q-item-section>
               <q-item-label>Twitter</q-item-label>
-              <q-item-label caption>@quasarframework</q-item-label>
+              <q-item-label caption>@ProtectMaunaKea</q-item-label>
             </q-item-section>
           </q-item>
-          <q-item clickable tag="a" target="_blank" href="https://facebook.quasar.dev">
+          <q-item clickable tag="a" target="_blank" href="https://www.facebook.com/protectmaunakea/">
             <q-item-section avatar>
               <q-icon name="public" />
             </q-item-section>
             <q-item-section>
               <q-item-label>Facebook</q-item-label>
-              <q-item-label caption>@QuasarFramework</q-item-label>
+              <q-item-label caption>@protectmaunakea</q-item-label>
             </q-item-section>
           </q-item>
         </q-list>
