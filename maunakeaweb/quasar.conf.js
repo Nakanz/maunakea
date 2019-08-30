@@ -47,6 +47,12 @@ module.exports = function (ctx) {
         'QItemLabel',
         'QBanner',
         'QFooter',
+        'QCard',
+        'QCardSection',
+        'QCardActions',
+        'QBreadcrumbs',
+        'QBreadcrumbsEl',
+        'QScrollArea',
       ],
 
       directives: [
@@ -84,7 +90,7 @@ module.exports = function (ctx) {
 
     devServer: {
       // https: true,
-      port: 8080,
+      // port: 8080,
       open: true, // opens browser window automatically
       proxy: {
         '/': {
