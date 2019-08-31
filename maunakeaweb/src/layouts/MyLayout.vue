@@ -16,19 +16,58 @@
 <!--          <img src="../statics/icons/mountain-512.png" style="width: 30px">-->
           Mauna a Wākea
         </q-toolbar-title>
-
-        <div>Signed in as: {{ $q.version }}</div>
       </q-toolbar>
       <q-toolbar inset>
         <q-breadcrumbs active-color="white" style="font-size: 16px">
           <q-breadcrumbs-el label="Home" icon="home" to="/"/>
           <q-breadcrumbs-el label="Movements" icon="group" to="/movements"/>
           <q-breadcrumbs-el label="News" icon="waves" to="/news"/>
-          <q-breadcrumbs-el label="navigation"/>
+          <q-breadcrumbs-el :label="getPath">
+            <q-tooltip>
+              Current Page
+            </q-tooltip>
+          </q-breadcrumbs-el>
         </q-breadcrumbs>
+
+        <q-space/>
+
+        <div class="q-gutter-sm row items-center no-wrap">
+          <q-item clickable v-close-popup tag="a" target="_blank" href="https://www.instagram.com/protectmaunakea/?hl=en">
+            <q-item-section>
+              <q-icon name="fab fa-instagram"/>Instagram
+            </q-item-section>
+          </q-item>
+          <q-item clickable v-close-popup tag="a" target="_blank" href="https://twitter.com/protectmaunakea?lang=en">
+            <q-item-section>
+              <q-icon name="fab fa-twitter"/>Twitter
+            </q-item-section>
+          </q-item>
+          <q-item clickable v-close-popup tag="a" target="_blank" href="https://www.facebook.com/protectmaunakea/">
+            <q-item-section>
+              <q-icon name="fab fa-facebook"/>Facebook
+            </q-item-section>
+          </q-item>
+
+          <q-btn
+              flat
+              dense
+              round
+              icon="supervisor_account"
+          >
+            <q-menu>
+              <q-list style="min-width: 100px">
+                <q-item clickable v-close-popup>
+                  <q-item-section>Sign Up</q-item-section>
+                </q-item>
+                <q-item clickable v-close-popup>
+                  <q-item-section>Login</q-item-section>
+                </q-item>
+              </q-list>
+            </q-menu>
+          </q-btn>
+        </div>
       </q-toolbar>
     </q-header>
-
     <q-drawer
       v-model="drawer"
       show-if-above
@@ -71,7 +110,7 @@
             </q-item-section>
             <q-item-section>
               <q-item-label>Donate</q-item-label>
-              <q-item-label caption>not implemented</q-item-label>
+              <q-item-label caption>Support the cause!</q-item-label>
             </q-item-section>
           </q-item>
           <q-item clickable tag="a" target="_blank" href="https://www.instagram.com/protectmaunakea/?hl=en">
@@ -120,10 +159,16 @@ export default {
     return {
       drawer: false,
       miniState: true,
+      currentPath: '',
     };
   },
   methods: {
     openURL,
+  },
+  computed: {
+    getPath() {
+      return '@' + this.$route.name;
+    },
   },
 };
 </script>

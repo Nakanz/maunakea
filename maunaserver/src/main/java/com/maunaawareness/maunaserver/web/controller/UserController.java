@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.maunaawareness.maunaserver.manager.UserManager;
 import com.maunaawareness.maunaserver.web.vo.LoginCredentials;
 import com.maunaawareness.maunaserver.web.vo.SignUpCredentials;
+import com.maunaawareness.maunaserver.web.vo.User;
 
 @RestController
 @RequestMapping("/user")
@@ -25,8 +26,10 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/sign-in", produces = MediaType.APPLICATION_JSON_VALUE)
-	public boolean signIn(@RequestParam(value="username") String username, @RequestParam(value = "password") String password) {
-		return userManager.loginUser(new LoginCredentials(username, password));
+	public User signIn(@RequestParam(value="username") String username, @RequestParam(value = "password") String password) {
+		User user = userManager.loginUser(new LoginCredentials(username, password));
+		return user;
+		
 	}
 	
 	

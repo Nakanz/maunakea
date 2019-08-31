@@ -1,19 +1,28 @@
 <template>
+  <div>
+  <div class="text-h3 q-mt-lg"
+       align="center">
+    <strong>Sacred Mauna Kea</strong>
+  </div>
       <div class="q-ma-lg row q-gutter-md justify-center">
         <q-card class="my-card">
-          <q-card-section>
-            <div class="text-h5"
-                 align="center">
-              <strong>The Importance of Sacred Mauna Kea</strong>
-            </div>
-          </q-card-section>
           <img src="../statics/kucampingMauna.jpg">
           <q-card-section>
-            <ul id="importanceBullet">
-              <li v-for="item in importance" :key="item.message">
-                {{ item.message }}
-              </li>
-            </ul>
+            <div class="text-h5 q-ma-xl"
+                 align="center">
+              History
+            </div>
+            <p>
+              Mauna Kea is a shield volcano that measures to 13,796 feet,
+            and is the tallest mountain in the world measured
+            below sea level. Yet its ancient history and importance to the Hawaiian people
+            outweigh its physical features.
+            </p>
+<!--            <ul id="importanceBullet">-->
+<!--              <li v-for="item in importance" :key="item.message">-->
+<!--                {{ item.message }}-->
+<!--              </li>-->
+<!--            </ul>-->
           </q-card-section>
         </q-card>
         <q-card class="my-card">
@@ -28,6 +37,7 @@
           </q-card-section>
         </q-card>
       </div>
+  </div>
 </template>
 
 <style lang="stylus" scoped>

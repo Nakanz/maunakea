@@ -30,17 +30,18 @@ public class UserManager {
 		return false;
 	}
 	// should return boolean or a User object?
-	public boolean loginUser(LoginCredentials credentials) {
+	public User loginUser(LoginCredentials credentials) {
 		if (credentials != null) {
 			UserEnt user = userRepository.getUserEntByUsername(credentials.getUsername());
 			if (user != null) {
 				PasswordEnt passwordEnt = passwordRepository.getPasswordEntByPasswordUserId(user.getUserId());
 				if (passwordEnt.getPassword().contentEquals(credentials.getPassword())) {
-					return true;
+					User userData = new User(user.getLastname(), user.getFirstname(), user.getDateJoined(), user.getUsername(), user.getEmail());
+					return userData;
 				}
 			}
 		}
-		return false;
+		return null;
 	}
 	
 	public User getUser() {
